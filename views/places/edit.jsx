@@ -1,6 +1,6 @@
 const React = require('react');
 const Def = require('../default.jsx');
-const methodOverride = require('method-override');
+
 
 function edit_form(data) {
   return (
@@ -24,7 +24,8 @@ function edit_form(data) {
               <input 
                 className="form-control" 
                 id="pic" 
-                name="pic" 
+                name="pic"
+                value={data.place.pic} 
               />
             </div>
             <div className="form-group col-sm-6">
@@ -32,7 +33,8 @@ function edit_form(data) {
               <input 
                 className="form-control" 
                 id="city" 
-                name="city" 
+                name="city"
+                value={data.place.city} 
               />
             </div>
             <div className="form-group col-sm-6">
@@ -40,7 +42,8 @@ function edit_form(data) {
               <input 
                 className="form-control" 
                 id="state" 
-                name="state" 
+                name="state"
+                value={data.place.state} 
               />
             </div>
             <div className="form-group col-sm-6">
@@ -48,12 +51,14 @@ function edit_form(data) {
               <input 
                 className="form-control" 
                 id="cuisines" 
-                name="cuisines" 
+                name="cuisines"
+                value={data.place.cuisines} 
                 required 
               />
             </div>
           </div>
-          <input className="btn btn-primary" type="submit" value="Add Place" />
+          <input type="hidden" name="_method" value="PUT" />
+          <input className="btn btn-primary" type="submit" value="Save Changes" />
         </form>
       </main>
     </Def>
