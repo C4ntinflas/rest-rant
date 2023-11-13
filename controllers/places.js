@@ -11,6 +11,19 @@ router.get('/new', (req, res) => {
   res.render('places/new')
 })
 
+router.put('/:id', (req, res) => {
+  let id = Number(req.params.id)
+  if (isNaN(id)) {
+      res.render('error404')
+  }
+  else if (!places[id]) {
+      res.render('error404')
+  }
+  else {
+      res.redirect(`/places/${id}`)
+  }
+})
+
 // SHOW
 router.get('/:id', (req, res) => {
   let id = Number(req.params.id)
@@ -21,7 +34,7 @@ router.get('/:id', (req, res) => {
     res.render('error404')
   }
   else {
-    res.render('places/show', { place: places[id], id })
+    res.render('places/show', { data: {place: places[id], id } })
   }
 })
 

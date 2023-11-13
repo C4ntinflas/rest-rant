@@ -38,3 +38,9 @@ nav a:hover {
     color: pink;
     text-decoration: none;
 }
+
+.my-image {
+  max-width: 75%; 
+  height: auto;
+  margin: 10px;
+}
