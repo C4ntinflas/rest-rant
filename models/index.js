@@ -1,21 +1,22 @@
-require('dotenv').config();
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-mongoose.connect(process.env.MONGO_URI, {
+const { MONGO_URI } = process.env;
+
+mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
 
 const db = mongoose.connection;
 
-// Event listener for successful connection
-db.on('connected', () => {
+db.once('open', () => {
   console.log('Connected to MongoDB');
 });
 
-// Event listener for connection errors
 db.on('error', (err) => {
   console.error('MongoDB connection error:', err);
 });
 
-module.exports.Place = require('./places');
+module.exports.Place = require('./places')
+module.exports.Comment = require('./comment')

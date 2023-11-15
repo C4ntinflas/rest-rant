@@ -1,7 +1,6 @@
 const React = require('react');
 const Def = require('../default.jsx');
 
-
 function edit_form(data) {
   return (
     <Def>
@@ -54,6 +53,15 @@ function edit_form(data) {
                 name="cuisines"
                 value={data.place.cuisines} 
                 required 
+              />
+            </div>
+            <div className="form-group col-sm-4">
+              <label htmlFor="founded">Founded</label>
+              <input 
+                className="form-control" 
+                id="founded" 
+                name="founded"
+                value={data.place.founded} 
               />
             </div>
           </div>

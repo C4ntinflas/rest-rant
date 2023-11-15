@@ -1,4 +1,4 @@
-const db = require('./models')
+const db = require('../models')
 
 db.Place.create([{
     name: 'H-Thai-ML',
@@ -12,7 +12,7 @@ db.Place.create([{
     city: 'Phoenix',
     state: 'AZ',
     cuisines: 'Coffee, Bakery',
-    pic: '/images/coffee-cat.jpg',
+    pic: '/images/Breakfast.jpg',
     founded: 2020
 }])
 .then(() => {
